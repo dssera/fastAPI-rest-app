@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="config database conn">
+    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="add User and Note models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,12 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727872260568</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add User and Note models">
+      <option name="closed" value="true" />
+      <created>1727873706494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727873706494</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="config file structure" />
     <MESSAGE value="config database conn" />
-    <option name="LAST_COMMIT_MESSAGE" value="config database conn" />
+    <MESSAGE value="add User and Note models" />
+    <option name="LAST_COMMIT_MESSAGE" value="add User and Note models" />
   </component>
 </project>
