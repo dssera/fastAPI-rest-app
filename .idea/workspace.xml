@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="add User and Note models">
+    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="add pydantic schemas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/crud.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,13 +107,22 @@
       <option name="project" value="LOCAL" />
       <updated>1727873706494</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add pydantic schemas">
+      <option name="closed" value="true" />
+      <created>1727874345504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727874345504</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="config file structure" />
     <MESSAGE value="config database conn" />
     <MESSAGE value="add User and Note models" />
-    <option name="LAST_COMMIT_MESSAGE" value="add User and Note models" />
+    <MESSAGE value="add pydantic schemas" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pydantic schemas" />
   </component>
 </project>
