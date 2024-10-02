@@ -12,7 +12,7 @@ class User(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
 
-    items = relationship("Note", back_populates="owner")
+    notes = relationship("Note", back_populates="owner")
 
 
 class Note(Base):
