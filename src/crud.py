@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import List, Type
 
 from sqlalchemy.orm import Session
@@ -22,7 +24,7 @@ def create_note(db: Session, note: schemas.NoteCreate, owner_id) -> models.Note:
     return db_note
 
 
-def get_users(db: Session, skip: int = 0, limit: int = 100) -> List[Type[models.Note]]:
+def get_users(db: Session, skip: int = 0, limit: int = 100) -> List[Type[models.User]] | None:
     return db.query(models.User).offset(skip).limit(limit).all()
 
 
