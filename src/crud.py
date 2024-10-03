@@ -12,6 +12,10 @@ def get_notes(db: Session, skip: int = 0, limit: int = 100) -> List[Type[models.
     return db.query(models.Note).offset(skip).limit(limit).all()
 
 
+def get_notes_for_user(db: Session, user_id: int, skip: int = 0, limit: int = 100) -> List[Type[models.Note]]:
+    return db.query(models.Note).filter(models.Note.owner_id == user_id).all()
+
+
 def get_note(db: Session, note_id: int):
     return db.query(models.Note).filter(models.Note.id == note_id).first()
 
