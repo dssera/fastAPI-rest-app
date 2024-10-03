@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="add endpoints">
+    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="add auth sys">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/crud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727878824058</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add auth sys">
+      <option name="closed" value="true" />
+      <created>1727946266639</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1727946266639</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,14 +208,15 @@
     <MESSAGE value="fix: replace &quot;items&quot; field on &quot;notes&quot;" />
     <MESSAGE value="fix: add owner_id param in create_note()" />
     <MESSAGE value="add endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="add endpoints" />
+    <MESSAGE value="add auth sys" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auth sys" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/crud.py</url>
-          <line>42</line>
+          <line>46</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

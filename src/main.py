@@ -43,16 +43,15 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
     return {"access_token": user.username, "token_type": "bearer"}
 
 
-def fake_decode_token(token, db: Session = Depends(get_db)):
-    # This doesn't provide any security at all
-    # Check the next version
-    # token is username actually
+def fake_decode_token(token, db: Session):
     user = crud.get_user_by_username(db=db, username=token)
+    print("from fake_decode_token: " + user.username)
     return user
 
 
-def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
-    user = fake_decode_token(token)
+def get_current_user(token: Annotated[str, Depends(oauth2_scheme)],
+                     db: Session = Depends(get_db)):
+    user = fake_decode_token(token, db)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -76,23 +75,22 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return users
 
 
-@app.post("/notes/", response_model=schemas.User)
+@app.post("/notes/", response_model=schemas.Note)
 def create_note(note: schemas.NoteCreate,
-                user: Annotated[schemas.User, get_current_user],
+                user: Annotated[schemas.User, Depends(get_current_user)], # where is Depends???
                 db: Session = Depends(get_db)):
-    # probably a place for Яндекс.Спеллер validation
-    # to get owner_id we need to implement auth system
     current_user_id = user.id
     print(current_user_id)
     return crud.create_note(db=db, note=note, owner_id=current_user_id)
 
 
 @app.get("/notes/", response_model=list[schemas.Note]) #
-def read_notes(token: Annotated[str, Depends(oauth2_scheme)],
+def read_notes(user: Annotated[models.User, Depends(get_current_user)],
                skip: int = 0,
                limit: int = 100,
                db: Session = Depends(get_db)):
-    notes = crud.get_note(db=db, skip=skip, limit=limit)
+    print(user.id, user.username)
+    notes = crud.get_notes_for_user(db=db, user_id=user.id)
     return notes
 
 
