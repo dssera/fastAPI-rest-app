@@ -6,11 +6,13 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
 from sqlalchemy.orm import Session
-from sqlalchemy.sql.functions import current_user
+
+from starlette import status
 
 from src import models, schemas, crud
 from src.database import engine, SessionLocal
 from src.schemas import UserCreate
+from src.speller_service import spell_text
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -30,12 +32,9 @@ def get_db():
 @app.post("/token")
 async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
                 db: Session = Depends(get_db)):
-    # it's called when user try to login
-    # user_dict = fake_users_db.get(form_data.username)
     user: models.User = crud.get_user_by_username(db=db, username=form_data.username)
     if not user:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
-    # user = UserInDB(**user_dict),
     user_ = UserCreate(username=user.username, password=user.hashed_password) # actually not hashed
     if not form_data.password == user_.password:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
@@ -77,11 +76,10 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 @app.post("/notes/", response_model=schemas.Note)
 def create_note(note: schemas.NoteCreate,
-                user: Annotated[schemas.User, Depends(get_current_user)], # where is Depends???
+                user: Annotated[schemas.User, Depends(get_current_user)],
                 db: Session = Depends(get_db)):
-    current_user_id = user.id
-    print(current_user_id)
-    return crud.create_note(db=db, note=note, owner_id=current_user_id)
+    note.text = spell_text(note.text)
+    return crud.create_note(db=db, note=note, owner_id=user.id)
 
 
 @app.get("/notes/", response_model=list[schemas.Note]) #
