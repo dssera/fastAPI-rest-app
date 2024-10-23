@@ -4,6 +4,7 @@ LABEL authors="Dessera"
 
 WORKDIR /usr/local/app
 
+# there is no && in exec mode, so I used shell one
 RUN apt-get update && apt-get -y install libpq-dev gcc && pip install psycopg2
 
 COPY requirements.txt ./

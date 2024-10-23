@@ -1,11 +1,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+# from sqlalchemy_utils import  database_exists, create_database # WORK WITH THAT
+
+from os import getenv
 # to postgresql pattern - postgresql+psycopg2://user:password@host:port/dbname
 
 # SQLALCHEMY_DATABASE_URL='postgresql+psycopg2://postgres:12345@localhost:5432/notes_db_temp_temp'
 # with docker - must use container name
-SQLALCHEMY_DATABASE_URL='postgresql+psycopg2://postgres:12345@notes_app_postgres:5432/notes_db'
+database_url = getenv('DATABASE_URL')
+SQLALCHEMY_DATABASE_URL=database_url
 # old db
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./itemsAppWithAuth.db"
 

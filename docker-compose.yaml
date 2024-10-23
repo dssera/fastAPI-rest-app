@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:5000"
+    environment:
+#
+      DATABASE_URL: 'postgresql+psycopg2://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}' # password to .env
+    depends_on:
+      - db
+    env_file:
+      - .env
+# becuase in the moment of creating db continer i need to connect via psql and CREATE DATABASE ${DATABASE_NAME}
+  db:
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # to .env
+      - POSTGRES_DB=${POSTGRES_DB}
+    env_file:
+      - .env
+

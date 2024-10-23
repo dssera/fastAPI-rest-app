@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="added Dockerfile">
+    <list default="true" id="ad7a455a-377b-4ba9-8970-56f8c219426f" name="Changes" comment="switched from sqlite to postgres and added Dockerfile">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wait-for-it.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729287847259</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="switched from sqlite to postgres and added Dockerfile">
+      <option name="closed" value="true" />
+      <created>1729501685629</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729501685629</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +288,8 @@
     <MESSAGE value="add get_notes_for_user func" />
     <MESSAGE value="fix: solve problem with dependencies" />
     <MESSAGE value="added Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Dockerfile" />
+    <MESSAGE value="switched from sqlite to postgres and added Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched from sqlite to postgres and added Dockerfile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
